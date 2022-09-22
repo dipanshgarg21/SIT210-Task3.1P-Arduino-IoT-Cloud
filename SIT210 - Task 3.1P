@@ -50,6 +50,17 @@ void loop()
   ArduinoCloud.update();
   // Your code here 
   light_read = light.GetLightIntensity();
+  
+  if(light_read >= 100)
+  {
+      led = true;
+      digitalWrite(LED_BUILTIN, led);
+  }
+  else
+  {
+    led = false;
+    digitalWrite(LED_BUILTIN, led);
+  }
   delay(1000);
 }
 
